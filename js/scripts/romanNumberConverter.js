@@ -16,11 +16,6 @@ function convertToRoman(num) {
     .set(1000, "M");
 
   let arabicArr = Array.from(String(num), Number);
-  let romanNum = [];
-  function test(number) {
-    return romandigits.get(number);
-  }
-  let test = test(4);
 
   // *First try with way to many ifs
   // let arabicNum = num;
