@@ -1,21 +1,38 @@
 function convertToRoman(num) {
-  // *Remember
-  //I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000
-  const romandigits = new Map()
-    .set(1, "I")
-    .set(4, "IV")
-    .set(5, "V")
-    .set(9, "IX")
-    .set(10, "X")
-    .set(40, "XL")
-    .set(90, "XC")
-    .set(100, "C")
-    .set(400, "CD")
-    .set(500, "D")
-    .set(900, "CM")
-    .set(1000, "M");
-
-  let arabicArr = Array.from(String(num), Number);
+  // Create a conversion table
+  let map = [
+    { digit: 1, roman: "I" },
+    { digit: 4, roman: "IV" },
+    { digit: 5, roman: "V" },
+    { digit: 9, roman: "IX" },
+    { digit: 10, roman: "X" },
+    { digit: 40, roman: "XL" },
+    { digit: 50, roman: "L" },
+    { digit: 90, roman: "XC" },
+    { digit: 100, roman: "C" },
+    { digit: 400, roman: "CD" },
+    { digit: 500, roman: "D" },
+    { digit: 900, roman: "CM" },
+    { digit: 1000, roman: "M" },
+  ];
+  // Array to store the roman numbers
+  let romanNum = [];
+  // Find the roman numbers
+  while (num > 0) {
+    let counter = 0;
+    // Run through the conversion table to find the highest possible roman number
+    for (let i = 0; i < map.length; i++) {
+      if (map[i].digit <= num) {
+        counter = i;
+      }
+    }
+    // Add the found roman number
+    romanNum.push(map[counter].roman);
+    // remove the value of the number
+    num -= map[counter].digit;
+  }
+  // Return the array of roman numbers as a string
+  return romanNum.join("");
 
   // *First try with way to many ifs
   // let arabicNum = num;
@@ -92,6 +109,6 @@ function convertToRoman(num) {
   // return romanNum.join("");
 }
 
-convertToRoman(3999);
+const roman = convertToRoman(3999);
 
 module.exports = convertToRoman;
