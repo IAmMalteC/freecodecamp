@@ -1,5 +1,8 @@
 const rot13 = require("./caesarsCipher");
 
-test("Returns a str 13 chars of", () => {
-  expect(rot13("N")).toMatch(/A/);
+test("Returns B if O is inserted", () => {
+  expect(rot13("O")).toMatch(/B/);
+});
+test("Returns O if B is inserted", () => {
+  expect(rot13("B")).toMatch(/O/);
 });
