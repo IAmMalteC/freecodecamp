@@ -1,0 +1,1 @@
+const checkCashRegister = require("./CashRegister");
