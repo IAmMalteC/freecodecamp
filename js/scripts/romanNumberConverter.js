@@ -24,6 +24,8 @@ function convertToRoman(num) {
     for (let i = 0; i < map.length; i++) {
       if (map[i].digit <= num) {
         counter = i;
+      } else {
+        break;
       }
     }
     // Add the found roman number
