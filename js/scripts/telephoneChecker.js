@@ -1,10 +1,7 @@
 function telephoneCheck(str) {
-  const regex = /^(1 |1)?([\d]{3}|[\d]{3}[-]|[\d]{3} |\([\d]{3}\)|\([\d]{3}\) )([\d]{3}|[\d]{3} |[\d]{3}[-])[\d]{4}/g;
-  if (regex.test(str)) {
-    return true;
-  } else {
-    return false;
-  }
+  // for validation of regex --> insert here: https://regex101.com/ and test with number combinations from the test file.
+  const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+  return regex.test(str);
 }
 
 telephoneCheck("(555-555-5555");
