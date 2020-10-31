@@ -11,6 +11,6 @@ function telephoneCheck(str) {
   }
 }
 
-telephoneCheck("5555555555");
+telephoneCheck("(555-555-5555");
 
 module.exports = telephoneCheck;
