@@ -12,6 +12,9 @@ test('Returns " " if " " is inserted', () => {
 });
 
 // Several letters test
-test('Returns "Free Code Camp" if "SERR PBQR PNZC" is inserted', () => {
+test('Returns "FREE CODE CAMP" if "SERR PBQR PNZC" is inserted', () => {
   expect(rot13("SERR PBQR PNZC")).toMatch(/FREE CODE CAMP/);
+});
+test('Returns "FREE LOVE?" if "SERR YBIR?" is inserted', () => {
+  expect(rot13("SERR YBIR?")).toMatch(/FREE LOVE\?/);
 });
