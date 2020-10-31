@@ -6,3 +6,6 @@ test("Returns B if O is inserted", () => {
 test("Returns O if B is inserted", () => {
   expect(rot13("B")).toMatch(/O/);
 });
+test('Returns " " if " " is inserted', () => {
+  expect(rot13(" ")).toMatch(/ /);
+});
