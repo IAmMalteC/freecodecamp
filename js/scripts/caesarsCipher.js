@@ -3,10 +3,11 @@ function rot13(str) {
   const ascii = (a) => a.charCodeAt(0);
   const stepsize = 13;
   let decryptedMessage = "";
+  let char;
   // Decipher
   for (let i = 0; i < str.length; i++) {
     // find current ascii value
-    let char = ascii(str[i]);
+    char = ascii(str[i]);
     // transform by the prefered stepsize
     if (char < 65 || char > 90) {
       // if char isn't an uppercase character, keep the value
