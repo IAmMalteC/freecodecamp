@@ -1,10 +1,6 @@
 function telephoneCheck(str) {
-  let telephoneNum = str.split("");
-  const regex = /\d/;
-  telephoneNum = telephoneNum.filter((digit) => regex.test(digit));
-
-  // check if the length is the correct us number length
-  if (telephoneNum.length === 10) {
+  const regex = /^(1 |1)?([\d]{3}|[\d]{3}[-]|[\d]{3} |\([\d]{3}\)|\([\d]{3}\) )([\d]{3}|[\d]{3} |[\d]{3}[-])[\d]{4}/g;
+  if (regex.test(str)) {
     return true;
   } else {
     return false;
